@@ -1,0 +1,6 @@
+{
+  "name": "Glow Lab NG",
+  "description": "Skincare clinic in Lekki, Lagos helping melanin-rich skin clear acne, fade dark spots, and stay healthy without bleaching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

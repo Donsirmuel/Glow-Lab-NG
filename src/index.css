@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color-sand: #EDE4D3;
+  --color-sand-deep: #D8C9AF;
+  --color-parchment: #F3EBDD;
+  --color-cream: #FAF6EE;
+  --color-espresso: #2B2118;
+  --color-espresso-hover: #41322A;
+  --color-espresso-soft: #372A1F;
+  --color-umber: #7A4B2E;
+  --color-umber-deep: #613A22;
+  --color-taupe: #6B5B4A;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #2B2118;
+    background-color: #EDE4D3;
+    scroll-padding-top: 72px;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle editorial film grain for soft tactile depth */
+.editorial-grain {
+  background-image: radial-gradient(rgba(43, 33, 24, 0.05) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+@keyframes heroBob {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Hide scrollbars cleanly for mobile treatment carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
