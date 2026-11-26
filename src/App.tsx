@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MotionConfig } from 'motion/react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -17,6 +17,26 @@ import type { SkinConcernOption } from './data/clinicData';
 export default function App() {
   const [preselectedConcern, setPreselectedConcern] = useState<SkinConcernOption>('Acne');
   const [bookingNote, setBookingNote] = useState<string>('');
+
+  useEffect(() => {
+    const canonicalUrl = `${window.location.origin}${window.location.pathname}`;
+    const ogImageUrl = `${window.location.origin}/og-image.jpg`;
+
+    const canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.href = canonicalUrl;
+
+    const ogUrlEl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (ogUrlEl) ogUrlEl.content = canonicalUrl;
+
+    const ogImageEl = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
+    if (ogImageEl) ogImageEl.content = ogImageUrl;
+
+    const ogSecureEl = document.querySelector<HTMLMetaElement>('meta[property="og:image:secure_url"]');
+    if (ogSecureEl) ogSecureEl.content = ogImageUrl;
+
+    const twImageEl = document.querySelector<HTMLMetaElement>('meta[name="twitter:image"]');
+    if (twImageEl) twImageEl.content = ogImageUrl;
+  }, []);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);

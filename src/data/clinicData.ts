@@ -103,12 +103,19 @@ export const HERO_SLIDES: HeroSlide[] = [
 // Interleaved skin-tone showcase order
 export const HERO_DISPLAY_ORDER = [0, 3, 1, 4, 2];
 
+export type TreatmentFocusFilter = 'All' | 'Acne' | 'Hyperpigmentation';
+
 export interface TreatmentItem {
   id: string;
   name: string;
   price: string;
   benefit: string;
   concernMatch: SkinConcernOption;
+  focusAreas: ('Acne' | 'Hyperpigmentation')[];
+  duration: string;
+  bestFor: string;
+  downtime: string;
+  sessionsRecommended: string;
   image: string;
   alt: string;
 }
@@ -122,6 +129,11 @@ export const TREATMENTS: TreatmentItem[] = [
     price: 'From ₦45,000',
     benefit: 'For breakouts & oil',
     concernMatch: 'Acne',
+    focusAreas: ['Acne'],
+    duration: '45 mins',
+    bestFor: 'Active breakouts, excess sebum & congestion',
+    downtime: 'Zero downtime',
+    sessionsRecommended: '3-4 sessions',
     image: treatmentAcneImg,
     alt: 'Aesthetician in Lagos clinic applying calming acne gel to a client cheek',
   },
@@ -131,6 +143,11 @@ export const TREATMENTS: TreatmentItem[] = [
     price: 'From ₦55,000',
     benefit: 'For dark spots & uneven tone',
     concernMatch: 'Dark Spots',
+    focusAreas: ['Hyperpigmentation'],
+    duration: '50 mins',
+    bestFor: 'Post-acne marks, dark patches & uneven tone',
+    downtime: 'Zero downtime',
+    sessionsRecommended: '4-6 sessions',
     image: treatmentHyperImg,
     alt: 'Aesthetician using a glass dropper to apply brightening serum to dark spots on a client cheek',
   },
@@ -140,6 +157,11 @@ export const TREATMENTS: TreatmentItem[] = [
     price: 'From ₦35,000',
     benefit: 'For dull, tired skin',
     concernMatch: 'Uneven Tone',
+    focusAreas: ['Acne', 'Hyperpigmentation'],
+    duration: '45 mins',
+    bestFor: 'Clogged pores, dehydration & dull tone',
+    downtime: 'Zero downtime',
+    sessionsRecommended: 'Every 3-4 weeks',
     image: treatmentHydraImg,
     alt: 'Hydro-dermabrasion facial session inside our Lekki skincare room',
   },
@@ -149,6 +171,11 @@ export const TREATMENTS: TreatmentItem[] = [
     price: 'From ₦60,000',
     benefit: 'For texture & scars',
     concernMatch: 'Dark Spots',
+    focusAreas: ['Hyperpigmentation', 'Acne'],
+    duration: '40 mins',
+    bestFor: 'Stubborn dark marks, texture & mild scars',
+    downtime: 'Light flaking (2-3 days)',
+    sessionsRecommended: '3-6 sessions',
     image: treatmentPeelImg,
     alt: 'Skincare specialist brushing a gentle facial peel onto a client face',
   },
@@ -158,6 +185,11 @@ export const TREATMENTS: TreatmentItem[] = [
     price: 'From ₦30,000',
     benefit: 'For smooth, soft skin',
     concernMatch: 'Sensitive',
+    focusAreas: ['Hyperpigmentation'],
+    duration: '35 mins',
+    bestFor: 'Sensitive skin, surface dullness & prep',
+    downtime: 'Zero downtime',
+    sessionsRecommended: 'Every 4 weeks',
     image: treatmentDermaplaningImg,
     alt: 'Aesthetician performing gentle facial dermaplaning along a client cheek',
   },

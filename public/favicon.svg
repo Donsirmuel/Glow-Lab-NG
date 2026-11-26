@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#2B2118" />
+  <rect x="4" y="4" width="56" height="56" rx="13" fill="none" stroke="#D8C9AF" stroke-opacity="0.28" stroke-width="1.5" />
+  <text
+    x="29"
+    y="41"
+    text-anchor="middle"
+    fill="#F3EBDD"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="25"
+    font-weight="600"
+    letter-spacing="-0.5"
+  >GL</text>
+  <circle cx="50" cy="21" r="4" fill="#7A4B2E" />
+</svg>

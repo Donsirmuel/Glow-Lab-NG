@@ -1,0 +1,35 @@
+# Glow Lab NG
+
+> Skincare clinic at 14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria. We help women across Lagos and internationally clear acne, fade dark spots, and balance uneven skin tone without bleaching.
+
+Glow Lab NG builds gentle six-week skincare plans calibrated for light, olive, warm brown, and melanin-rich complexions using NAFDAC-approved treatments and 0 bleaching agents. Over 2,500 clients treated with a 4.9/5 average rating across 1,100+ reviews.
+
+## Clinic Details
+- **Clinic Name**: Glow Lab NG
+- **Location**: 14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria
+- **Service Scope**: In-clinic appointments in Lekki, Lagos and remote skin consultations worldwide
+- **Opening Hours**: Monday - Saturday, 9:00 AM - 7:00 PM WAT
+- **Free Skin Consultation**: Book via website form or WhatsApp at https://wa.me/2348012345678
+- **Bleaching Policy**: Zero bleaching agents (no hydroquinone bleaching cocktails, no harsh steroids)
+
+## Core Treatments & Pricing
+- [Treatments & Skin Quiz](https://ais-pre-wsffvgnhad6tklz6zek5vq-483976305453.europe-west2.run.app/#treatments): Clinical facials and corrective sessions
+- **Acne Clear Treatment**: From ₦45,000 — targets breakouts, active blemishes, and excess oil while protecting the skin barrier
+- **Hyperpigmentation Fix**: From ₦55,000 — fades stubborn dark spots, post-acne marks, and uneven tone steadily
+- **Hydra Glow Facial**: From ₦35,000 (standard session ₦45,000) — clears clogged pores and revives dull, tired skin in 45 minutes
+- **Chemical Peel**: From ₦60,000 — smooths rough skin texture and post-acne scarring safely across skin tones
+- **Dermaplaning**: From ₦30,000 — gentle exfoliation for soft, smooth skin texture and sensitive skin
+- **Glow Facial + Peel Combo**: ₦85,000 — combined resurfacing and deep hydration session
+
+## Glow Club Membership
+- [Glow Club Monthly](https://ais-pre-wsffvgnhad6tklz6zek5vq-483976305453.europe-west2.run.app/#glow-club): ₦89,000/month (cancel anytime, zero lock-in)
+- Includes 2 facials per month, 1 free consultation, 10% off all skincare products, and priority WhatsApp booking.
+
+## Quick Answers (FAQ)
+- **Will treatments bleach my skin?** No. Glow Lab NG does not perform skin bleaching and uses 0 bleaching agents; treatments work with your natural tone to even it out.
+- **How long before I see results?** Most clients notice visible improvement in 3 to 4 weeks, with full results in 6 to 8 weeks.
+- **Is it safe for sensitive skin and all skin tones?** Yes. Every treatment is calibrated for sensitive, light, olive, and melanin-rich skin without harsh bleaching agents.
+- **What do I need to bring for my first visit?** Just yourself. A full skin analysis is included on your first visit.
+
+## Detailed Reference
+- [Full Clinical Guide & Service Index](https://ais-pre-wsffvgnhad6tklz6zek5vq-483976305453.europe-west2.run.app/llms-full.txt)

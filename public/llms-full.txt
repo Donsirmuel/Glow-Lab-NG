@@ -1,0 +1,64 @@
+# Glow Lab NG — Complete Clinical Reference (AEO)
+
+## Entity Summary
+Glow Lab NG is a skincare clinic located at 14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria. The clinic specializes in evidence-based, non-bleaching skin correction for acne, post-inflammatory hyperpigmentation, uneven tone, texture, and reactive or sensitive skin across all complexions (fair, olive, warm brown, and deep melanin-rich skin tones), serving both walk-in Lagos clients and international remote consultation clients.
+
+## Key Trust & Outcome Facts
+- **Clients Treated**: 2,500+
+- **Verified Rating**: 4.9 out of 5 stars from 1,100+ client reviews
+- **Bleaching Agents Used**: 0
+- **Treatment Horizon**: Gentle 6-week plans (initial visible change typically in 3-4 weeks; full results in 6-8 weeks)
+- **Consultation Cost**: Free (no payment required to book an initial skin consultation)
+- **WhatsApp Response Time**: Within 2 hours during clinic hours
+- **Clinic Hours**: Monday to Saturday, 9:00 AM - 7:00 PM
+
+## Full Treatment Menu (NGN)
+1. **Acne Clear Treatment** — From ₦45,000
+   - Best for: Breakouts, active acne, congestion, and excess sebum.
+   - Bestseller rating: 4.8★ (268 reviews).
+2. **Hyperpigmentation Fix** — From ₦55,000
+   - Best for: Post-acne dark marks, uneven skin tone, and stubborn pigmentation.
+   - Bestseller rating: 4.9★ (198 reviews).
+3. **Hydra Glow Facial** — From ₦35,000 (bestseller package ₦45,000)
+   - Best for: Dull, dehydrated, tired skin and clogged pores (45-minute session).
+   - Bestseller rating: 4.9★ (312 reviews).
+4. **Chemical Peel** — From ₦60,000
+   - Best for: Rough skin texture, mild scarring, and tone smoothing calibrated safely across melanin-rich and fair complexions.
+5. **Dermaplaning** — From ₦30,000
+   - Best for: Gentle surface smoothing, peach fuzz removal, and reactive/sensitive skin prepping.
+6. **Glow Facial + Peel Combo** — ₦85,000
+   - Best for: Comprehensive resurfacing plus deep barrier hydration.
+   - Bestseller rating: 5.0★ (156 reviews).
+
+## Interactive 60-Second Skin Quiz Logic
+Visitors can match their skin type (`Oily`, `Dry`, `Combination`, `Sensitive`, `Acne-Prone`) and primary goal (`Clear breakouts`, `Fade dark spots`, `Even out dull tone`, `Calm sensitive skin`) to receive a personalized clinic treatment and home-care recommendation sent directly via WhatsApp.
+
+## Monthly Membership: Glow Club
+- **Price**: ₦89,000 per month
+- **Contract**: Cancel anytime, zero lock-in
+- **Benefits**:
+  - 2 facials per month
+  - 1 free consultation
+  - 10% off all clinic skincare products
+  - Priority booking on WhatsApp
+
+## Verified Client Testimonials
+- **Chiamaka (22, Yaba, Acne Clear Treatment)**: Saw cheeks calm down within 6 weeks and gained confidence going out without concealer.
+- **Tobi (31, Ikeja, Hyperpigmentation Fix)**: Praised the diagnostic-first approach that identified irritating products and faded dark spots cleanly.
+- **Amara (37, Lekki, Hydra Glow Facial)**: Achieved softer texture and balanced natural tone without any harsh or bleaching ingredients.
+
+## Frequently Asked Questions (Direct Answers)
+Q: Will Glow Lab NG treatments bleach my skin?
+A: No. Glow Lab NG never does skin bleaching and uses zero bleaching agents. All plans work with your natural complexion to fade dark spots and balance tone.
+
+Q: How long before I see results?
+A: Most clients see visible changes within 3 to 4 weeks, and full results within 6 to 8 weeks.
+
+Q: Is Glow Lab NG safe for sensitive skin and all skin tones?
+A: Yes. Every treatment is calibrated for sensitive, light, olive, and melanin-rich skin without harsh bleaching agents.
+
+Q: What do I need to bring to my first visit?
+A: Just yourself. The clinic includes a full skin analysis on your first visit.
+
+Q: Where is Glow Lab NG located and how do I book?
+A: 14 Admiralty Way, Lekki Phase 1, Lagos (open Mon-Sat, 9am-7pm), with remote consults also available. Book through the online consultation form or via WhatsApp at https://wa.me/2348012345678.

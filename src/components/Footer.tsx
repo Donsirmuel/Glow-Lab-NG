@@ -36,10 +36,10 @@ export function Footer() {
             <h3 className="text-xs font-semibold tracking-wider text-[#D8C9AF] uppercase">
               Visit Lekki Clinic
             </h3>
-            <div className="mt-3 flex items-start gap-2.5 text-sm text-[#F3EBDD]">
+            <address className="mt-3 flex items-start gap-2.5 text-sm not-italic text-[#F3EBDD]">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#D8C9AF]" aria-hidden="true" />
               <span>14 Admiralty Way, Lekki Phase 1, Lagos</span>
-            </div>
+            </address>
           </motion.div>
 
           {/* Hours Column */}

@@ -1,0 +1,40 @@
+# Glow Lab NG - Robots & AI Crawler Policy
+User-agent: *
+Allow: /
+Disallow: /assets/aistudio/
+
+# Search & Answer Engine Crawlers (AEO)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+Sitemap: https://ais-pre-wsffvgnhad6tklz6zek5vq-483976305453.europe-west2.run.app/sitemap.xml
