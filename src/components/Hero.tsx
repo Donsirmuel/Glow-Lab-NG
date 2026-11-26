@@ -814,7 +814,7 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
       {/* Full-bleed WebGL & Portrait Visual Stage */}
       <div
         ref={visRef}
-        className="relative h-[50svh] min-h-[340px] max-h-[450px] w-full overflow-hidden md:absolute md:inset-0 md:h-full md:max-h-none"
+        className="relative h-[45svh] min-h-[310px] max-h-[400px] w-full overflow-hidden md:absolute md:inset-0 md:h-full md:max-h-none"
       >
         {/* Smooth page-load unveil + subtle floating layer for portrait imagery */}
         <motion.div
