@@ -14,8 +14,8 @@ interface HeroProps {
 }
 
 const HEADLINE_SYNONYMS = [
-  'Radiantly.',
   'Naturally.',
+  'Radiantly.',
   'Confidently.',
   'Smoothly.',
   'Clearly.',
@@ -442,8 +442,9 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
     const H = vis.clientHeight;
     if (W === 0 || H === 0) return;
 
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
-    const isTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches;
+    const isMobile = window.matchMedia('(max-width: 639px)').matches;
+    const isTablet = window.matchMedia('(min-width: 640px) and (max-width: 1023px)').matches;
+    const isCompactDesktop = window.matchMedia('(min-width: 1024px) and (max-width: 1279px)').matches;
     const dpr = Math.min(window.devicePixelRatio || 1, 1.75);
     canvas.width = Math.round(W * dpr);
     canvas.height = Math.round(H * dpr);
@@ -452,8 +453,10 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
     const A: [number, number] = isMobile
       ? [W * 0.58, H * 0.37]
       : isTablet
-        ? [W * 0.72, H * 0.42]
-        : [W * 0.67, H * 0.42];
+        ? [W * 0.63, H * 0.39]
+        : isCompactDesktop
+          ? [W * 0.72, H * 0.42]
+          : [W * 0.67, H * 0.42];
 
     geoRef.current = {
       ...geoRef.current,
@@ -466,16 +469,22 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
 
     const ph = isMobile
       ? Math.min(104, Math.max(82, H * 0.24))
-      : (isTablet ? 110 : 122) * S;
+      : isTablet
+        ? Math.min(136, Math.max(106, H * 0.29))
+        : (isCompactDesktop ? 112 : 122) * S;
     const pw = ph * 0.625;
     const coords: [number, number][] = [];
     const layouts: VesselLayout[] = HERO_SLIDES.map((slide) => {
       const cx = isMobile
         ? Math.max(56, W * 0.17)
-        : A[0] + (slide.chest[0] - slide.anchor[0]) * S;
+        : isTablet
+          ? Math.max(108, W * 0.23)
+          : A[0] + (slide.chest[0] - slide.anchor[0]) * S;
       const cy = isMobile
         ? H * 0.61
-        : A[1] + (slide.chest[1] - slide.anchor[1]) * S;
+        : isTablet
+          ? H * 0.58
+          : A[1] + (slide.chest[1] - slide.anchor[1]) * S;
       coords.push([cx, cy]);
       return {
         left: cx - pw / 2,
@@ -809,12 +818,12 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-[#EDE4D3] md:flex md:min-h-[600px] lg:min-h-[min(88svh,760px)] md:items-center"
+      className="relative overflow-hidden bg-[#EDE4D3] lg:flex lg:min-h-[min(88svh,760px)] lg:items-center"
     >
       {/* Full-bleed WebGL & Portrait Visual Stage */}
       <div
         ref={visRef}
-        className="relative h-[45svh] min-h-[310px] max-h-[400px] w-full overflow-hidden md:absolute md:inset-0 md:h-full md:max-h-none"
+        className="relative h-[45svh] min-h-[310px] max-h-[400px] w-full overflow-hidden sm:h-[46svh] sm:min-h-[380px] sm:max-h-[470px] lg:absolute lg:inset-0 lg:h-full lg:max-h-none"
       >
         {/* Smooth page-load unveil + subtle floating layer for portrait imagery */}
         <motion.div
@@ -850,7 +859,7 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
               fetchPriority="high"
               decoding="async"
               referrerPolicy="no-referrer"
-              className={`absolute inset-0 h-full w-full object-cover object-[60%_24%] transition-opacity duration-300 md:object-[68%_30%] ${
+              className={`absolute inset-0 h-full w-full object-cover object-[60%_24%] transition-opacity duration-300 sm:object-[63%_24%] lg:object-[68%_30%] ${
                 webglReady && !shouldReduceMotion ? 'opacity-0' : 'opacity-100'
               }`}
             />
@@ -870,7 +879,7 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
         {/* Warm Sand gradient scrims for effortless text legibility */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#EDE4D3_0%,rgba(237,228,211,0.55)_16%,transparent_40%)] md:bg-[linear-gradient(90deg,rgba(237,228,211,0.98)_0%,rgba(237,228,211,0.88)_38%,rgba(237,228,211,0.22)_58%,transparent_74%),linear-gradient(0deg,rgba(237,228,211,0.45),transparent_30%)]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#EDE4D3_0%,rgba(237,228,211,0.55)_16%,transparent_40%)] lg:bg-[linear-gradient(90deg,rgba(237,228,211,0.98)_0%,rgba(237,228,211,0.9)_42%,rgba(237,228,211,0.34)_60%,transparent_76%),linear-gradient(0deg,rgba(237,228,211,0.45),transparent_30%)]"
         />
 
         {/* Floating clinical treatment vessels anchored to portrait coordinates */}
@@ -927,7 +936,7 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
           initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: EASE_EDITORIAL }}
-          className="hidden md:absolute md:right-8 md:bottom-7 md:z-20 md:block lg:right-10"
+          className="hidden lg:absolute lg:right-10 lg:bottom-7 lg:z-20 lg:block"
         >
           <AnimatePresence mode="wait">
             <motion.p
@@ -946,12 +955,12 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
         </motion.div>
       </div>
 
-      {/* Mobile Treatment Caption (below portrait, no circular swatches) */}
+      {/* Mobile & Tablet Treatment Caption (below portrait, no circular swatches) */}
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.25, ease: EASE_EDITORIAL }}
-        className="relative z-20 px-4 pt-2 pb-4 md:hidden"
+        className="relative z-20 px-4 pt-2 pb-4 sm:pt-3 sm:pb-5 lg:hidden"
       >
         <AnimatePresence mode="wait">
           <motion.p
@@ -969,44 +978,47 @@ export function Hero({ onBookClick, onQuizClick }: HeroProps) {
         </AnimatePresence>
       </motion.div>
 
-      {/* Hero Editorial Copy Column (left side on md+ screens, staggered entrance) */}
-      <div className="relative z-20 mx-auto w-full max-w-[1320px] px-5 pt-2 pb-12 sm:px-6 md:py-16 lg:px-10 lg:py-20">
+      {/* Hero Editorial Copy Column (left side on lg+ screens, staggered entrance) */}
+      <div className="relative z-20 mx-auto w-full max-w-[1320px] px-5 pt-2 pb-12 sm:px-8 sm:pb-14 lg:px-10 lg:py-20">
         <motion.div
           variants={HERO_CONTAINER_VARIANTS}
           initial={shouldReduceMotion ? false : 'hidden'}
           animate="visible"
-          className="max-w-[580px] md:max-w-[52%] lg:max-w-[560px]"
+          className="max-w-[640px] lg:max-w-[55%] xl:max-w-[620px]"
         >
-          <h1 className="font-display text-[44px] leading-[1.03] font-semibold tracking-[-0.025em] text-[#2B2118] sm:text-[62px] xl:text-[78px]">
+          <h1 className="font-display text-[35px] leading-[1.06] font-semibold tracking-[-0.025em] text-[#2B2118] sm:text-[48px] md:text-[54px] lg:text-[52px] xl:text-[66px]">
             <motion.span variants={HERO_ITEM_VARIANTS} className="block">
               Looking good,
             </motion.span>
             <motion.span
               variants={HERO_ITEM_VARIANTS}
-              className="relative mt-1.5 block min-h-[1.12em] italic font-normal text-[#7A4B2E]"
+              className="mt-1.5 block min-h-[1.12em]"
             >
-              {shouldReduceMotion ? (
-                <span>Radiantly.</span>
-              ) : (
-                <AnimatePresence initial={false}>
-                  <motion.span
-                    key={currentWord}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{
-                      opacity: 0,
-                      y: -10,
-                      position: 'absolute',
-                      left: 0,
-                      top: 0,
-                    }}
-                    transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
-                    className="inline-block"
-                  >
-                    {currentWord}
-                  </motion.span>
-                </AnimatePresence>
-              )}
+              <span>Glowing </span>
+              <span className="relative inline-block italic font-normal text-[#7A4B2E]">
+                {shouldReduceMotion ? (
+                  <span>Naturally.</span>
+                ) : (
+                  <AnimatePresence initial={false}>
+                    <motion.span
+                      key={currentWord}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{
+                        opacity: 0,
+                        y: -10,
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                      }}
+                      transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
+                      className="inline-block whitespace-nowrap"
+                    >
+                      {currentWord}
+                    </motion.span>
+                  </AnimatePresence>
+                )}
+              </span>
             </motion.span>
           </h1>
 

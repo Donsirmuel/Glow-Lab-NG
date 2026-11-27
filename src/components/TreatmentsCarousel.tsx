@@ -76,10 +76,10 @@ export function TreatmentsCarousel({ onSelectTreatment }: TreatmentsCarouselProp
 
   const desktopGridClass =
     filteredTreatments.length <= 3
-      ? 'lg:grid-cols-3'
+      ? 'xl:grid-cols-3'
       : filteredTreatments.length === 4
-        ? 'lg:grid-cols-4'
-        : 'lg:grid-cols-5';
+        ? 'xl:grid-cols-4'
+        : 'xl:grid-cols-5';
 
   const activeMeta = FILTER_OPTIONS.find((opt) => opt.id === activeFilter);
 
@@ -119,7 +119,7 @@ export function TreatmentsCarousel({ onSelectTreatment }: TreatmentsCarouselProp
             </motion.p>
           </div>
 
-          <motion.div variants={STAGGER_ITEM} className="hidden items-center gap-2 lg:flex">
+          <motion.div variants={STAGGER_ITEM} className="hidden items-center gap-2 sm:flex xl:hidden">
             <motion.button
               type="button"
               whileHover={shouldReduceMotion ? undefined : { scale: 1.06 }}
@@ -149,73 +149,79 @@ export function TreatmentsCarousel({ onSelectTreatment }: TreatmentsCarouselProp
           whileInView={{ opacity: 1, y: 0 }}
           viewport={SECTION_VIEWPORT}
           transition={{ duration: 0.5, delay: 0.1, ease: EASE_EDITORIAL }}
-          className="mt-7 flex flex-col justify-between gap-3 border-y border-[#2B2118]/12 py-4 sm:flex-row sm:items-center"
+          className="mt-7 flex flex-col gap-3 border-y border-[#2B2118]/12 py-4"
         >
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-            <div
-              role="tablist"
-              aria-label="Filter treatments by skin focus"
-              className="no-scrollbar flex items-center gap-1.5 overflow-x-auto rounded-full border border-[#2B2118]/12 bg-[#EDE4D3] p-1"
-            >
-              {FILTER_OPTIONS.map((option) => {
-                const isSelected = activeFilter === option.id;
-                const count = getCountForFilter(option.id);
-                return (
-                  <button
-                    key={option.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={isSelected}
-                    onClick={() => handleFilterChange(option.id)}
-                    className={`min-h-[38px] cursor-pointer rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors duration-150 whitespace-nowrap shrink-0 sm:px-4 sm:text-sm ${
-                      isSelected
-                        ? 'bg-[#2B2118] text-[#F3EBDD] shadow-xs'
-                        : 'text-[#6B5B4A] hover:text-[#2B2118]'
-                    }`}
-                  >
-                    {option.label}{' '}
-                    <span
-                      className={`tabular-nums ml-1 text-[11px] ${
-                        isSelected ? 'text-[#D8C9AF]' : 'text-[#6B5B4A]/80'
+          <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
+            <div className="flex flex-col gap-2 xl:flex-row xl:items-center xl:gap-4">
+              <div
+                role="tablist"
+                aria-label="Filter treatments by skin focus"
+                className="no-scrollbar flex max-w-full items-center gap-1.5 overflow-x-auto rounded-full border border-[#2B2118]/12 bg-[#EDE4D3] p-1"
+              >
+                {FILTER_OPTIONS.map((option) => {
+                  const isSelected = activeFilter === option.id;
+                  const count = getCountForFilter(option.id);
+                  return (
+                    <button
+                      key={option.id}
+                      type="button"
+                      role="tab"
+                      aria-selected={isSelected}
+                      onClick={() => handleFilterChange(option.id)}
+                      className={`min-h-[38px] cursor-pointer rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors duration-150 whitespace-nowrap shrink-0 sm:px-4 sm:text-sm ${
+                        isSelected
+                          ? 'bg-[#2B2118] text-[#F3EBDD] shadow-xs'
+                          : 'text-[#6B5B4A] hover:text-[#2B2118]'
                       }`}
                     >
-                      ({count})
-                    </span>
-                  </button>
-                );
-              })}
+                      {option.label}{' '}
+                      <span
+                        className={`tabular-nums ml-1 text-[11px] ${
+                          isSelected ? 'text-[#D8C9AF]' : 'text-[#6B5B4A]/80'
+                        }`}
+                      >
+                        ({count})
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {activeMeta && (
+                <p className="hidden text-sm text-[#6B5B4A] xl:block">{activeMeta.description}</p>
+              )}
             </div>
 
-            {activeMeta && (
-              <p className="text-xs text-[#6B5B4A] sm:text-sm">{activeMeta.description}</p>
-            )}
+            <motion.button
+              type="button"
+              aria-expanded={compareOpen}
+              aria-controls="treatment-comparison-panel"
+              whileHover={shouldReduceMotion ? undefined : { y: -1 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
+              onClick={() => setCompareOpen((prev) => !prev)}
+              className={`inline-flex min-h-[40px] cursor-pointer items-center justify-center gap-2 self-start rounded-full border px-4 py-2 text-xs font-semibold transition-colors duration-150 whitespace-nowrap shrink-0 md:self-auto sm:text-sm ${
+                compareOpen
+                  ? 'border-[#7A4B2E] bg-[#7A4B2E] text-[#F3EBDD]'
+                  : 'border-[#2B2118]/25 bg-[#FAF6EE] text-[#2B2118] hover:border-[#2B2118]'
+              }`}
+            >
+              {compareOpen ? (
+                <>
+                  <X className="h-3.5 w-3.5" aria-hidden="true" />
+                  Close Comparison
+                </>
+              ) : (
+                <>
+                  <Columns3 className="h-3.5 w-3.5" aria-hidden="true" />
+                  Compare Side-by-Side
+                </>
+              )}
+            </motion.button>
           </div>
 
-          <motion.button
-            type="button"
-            aria-expanded={compareOpen}
-            aria-controls="treatment-comparison-panel"
-            whileHover={shouldReduceMotion ? undefined : { y: -1 }}
-            whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
-            onClick={() => setCompareOpen((prev) => !prev)}
-            className={`inline-flex min-h-[40px] cursor-pointer items-center justify-center gap-2 self-start rounded-full border px-4 py-2 text-xs font-semibold transition-colors duration-150 whitespace-nowrap shrink-0 sm:self-auto sm:text-sm ${
-              compareOpen
-                ? 'border-[#7A4B2E] bg-[#7A4B2E] text-[#F3EBDD]'
-                : 'border-[#2B2118]/25 bg-[#FAF6EE] text-[#2B2118] hover:border-[#2B2118]'
-            }`}
-          >
-            {compareOpen ? (
-              <>
-                <X className="h-3.5 w-3.5" aria-hidden="true" />
-                Close Comparison
-              </>
-            ) : (
-              <>
-                <Columns3 className="h-3.5 w-3.5" aria-hidden="true" />
-                Compare Side-by-Side
-              </>
-            )}
-          </motion.button>
+          {activeMeta && (
+            <p className="text-xs text-[#6B5B4A] sm:text-sm xl:hidden">{activeMeta.description}</p>
+          )}
         </motion.div>
 
         {/* Expandable Side-by-Side Treatment Comparison Table */}
@@ -246,7 +252,7 @@ export function TreatmentsCarousel({ onSelectTreatment }: TreatmentsCarouselProp
                 </div>
 
                 <div className="mt-4 overflow-x-auto">
-                  <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+                  <table className="w-full min-w-[780px] border-collapse text-left text-sm">
                     <thead>
                       <tr className="border-b border-[#2B2118]/12 text-xs font-semibold tracking-wide text-[#6B5B4A] uppercase">
                         <th scope="col" className="w-36 py-3 pr-4">
@@ -356,7 +362,7 @@ export function TreatmentsCarousel({ onSelectTreatment }: TreatmentsCarouselProp
             aria-hidden="true"
             viewBox="0 0 1200 180"
             preserveAspectRatio="none"
-            className="pointer-events-none absolute top-1/2 left-0 hidden h-36 w-full -translate-y-1/2 lg:block"
+            className="pointer-events-none absolute top-1/2 left-0 hidden h-36 w-full -translate-y-1/2 xl:block"
           >
             <motion.path
               d="M 40 50 C 160 15, 220 145, 360 135 C 480 125, 500 35, 600 40 C 700 45, 740 140, 860 135 C 980 130, 1040 25, 1160 55"
@@ -373,7 +379,7 @@ export function TreatmentsCarousel({ onSelectTreatment }: TreatmentsCarouselProp
 
           <div
             ref={scrollContainerRef}
-            className={`no-scrollbar relative -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pt-6 pb-10 sm:mx-0 sm:px-0 lg:grid ${desktopGridClass} lg:gap-5 lg:overflow-visible lg:pt-8 lg:pb-12`}
+            className={`no-scrollbar relative -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pt-6 pb-10 sm:mx-0 sm:px-0 xl:grid ${desktopGridClass} xl:gap-5 xl:overflow-visible xl:pt-8 xl:pb-12`}
           >
             <AnimatePresence mode="popLayout">
               {filteredTreatments.map((treatment, idx) => {
@@ -396,10 +402,10 @@ export function TreatmentsCarousel({ onSelectTreatment }: TreatmentsCarouselProp
                       delay: hasFiltered ? idx * 0.04 : 0.08 + idx * 0.07,
                       ease: EASE_EDITORIAL,
                     }}
-                    className={`w-[74vw] max-w-[265px] shrink-0 snap-start lg:w-auto lg:max-w-none ${
+                    className={`w-[74vw] max-w-[270px] shrink-0 snap-start sm:w-[272px] sm:max-w-none xl:w-auto ${
                       isCrest
-                        ? '-translate-y-3 lg:-translate-y-6'
-                        : 'translate-y-4 lg:translate-y-7'
+                        ? '-translate-y-3 xl:-translate-y-6'
+                        : 'translate-y-4 xl:translate-y-7'
                     }`}
                   >
                     <motion.article

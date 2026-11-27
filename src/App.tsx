@@ -120,7 +120,7 @@ export default function App() {
         </main>
 
         {/* Section 11: Footer */}
-        <Footer />
+        <Footer onBookClick={handleBookConsultation} />
 
         {/* Mobile & Desktop Floating WhatsApp Button */}
         <FloatingWhatsApp />

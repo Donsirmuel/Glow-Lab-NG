@@ -26,7 +26,7 @@ export function GlowClub({ onJoinGlowClub }: GlowClubProps) {
           transition={{ duration: 0.62, ease: EASE_EDITORIAL }}
           className="grid grid-cols-1 overflow-hidden rounded-[24px] border border-[#2B2118]/14 bg-[#FAF6EE] lg:grid-cols-2 lg:items-stretch"
         >
-          <div className="group relative min-h-[300px] overflow-hidden bg-[#D8C9AF]/40 lg:min-h-[500px]">
+          <div className="group relative aspect-[4/3] overflow-hidden bg-[#D8C9AF]/40 sm:aspect-[16/10] lg:aspect-auto lg:min-h-[500px]">
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, scale: 1.06 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -49,7 +49,7 @@ export function GlowClub({ onJoinGlowClub }: GlowClubProps) {
             initial={shouldReduceMotion ? false : 'hidden'}
             whileInView="visible"
             viewport={SECTION_VIEWPORT}
-            className="flex flex-col justify-center p-6 sm:p-10 lg:p-14"
+            className="flex flex-col justify-center p-6 sm:p-10 lg:p-10 xl:p-14"
           >
             <motion.p
               variants={STAGGER_ITEM}

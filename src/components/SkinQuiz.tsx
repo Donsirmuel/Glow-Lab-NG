@@ -117,7 +117,7 @@ export function SkinQuiz({ onBookFromQuiz }: SkinQuizProps) {
           className="grid grid-cols-1 overflow-hidden rounded-[24px] border border-[#2B2118]/14 bg-[#FAF6EE] lg:grid-cols-2 lg:items-stretch"
         >
           {/* Left: Deep Espresso panel with scalloped flower portrait cutout */}
-          <div className="relative flex min-h-[340px] items-center justify-center bg-[#2B2118] p-8 sm:min-h-[440px] sm:p-12">
+          <div className="relative flex min-h-[300px] items-center justify-center bg-[#2B2118] p-8 sm:min-h-[360px] sm:p-10 lg:min-h-[440px] lg:p-12">
             <svg width="0" height="0" className="absolute" aria-hidden="true">
               <defs>
                 <clipPath id="glow-flower-clip" clipPathUnits="objectBoundingBox">
@@ -131,7 +131,7 @@ export function SkinQuiz({ onBookFromQuiz }: SkinQuizProps) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={SECTION_VIEWPORT}
               transition={{ duration: 0.72, delay: 0.14, ease: EASE_EDITORIAL }}
-              className="relative aspect-square w-full max-w-[340px]"
+              className="relative aspect-square w-full max-w-[270px] sm:max-w-[310px] lg:max-w-[340px]"
             >
               <motion.div
                 animate={shouldReduceMotion ? undefined : { scale: [1, 1.02, 1] }}
@@ -166,7 +166,7 @@ export function SkinQuiz({ onBookFromQuiz }: SkinQuizProps) {
           </div>
 
           {/* Right: Interactive Skin Type Selector + Animated 3-Step Quiz Flow */}
-          <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-14">
+          <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-10 xl:p-14">
             <AnimatePresence mode="wait">
               {!quizOpen ? (
                 <motion.div

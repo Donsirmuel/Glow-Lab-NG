@@ -242,7 +242,7 @@ export function BookingForm({ preselectedConcern, bookingNote }: BookingFormProp
                         min={getTomorrowIsoDate()}
                         value={preferredDate}
                         onChange={(e) => setPreferredDate(e.target.value)}
-                        className="w-full rounded-xl border border-[#2B2118]/20 bg-[#EDE4D3]/40 px-4 py-3 text-sm text-[#2B2118] transition-colors focus:border-[#7A4B2E] focus:bg-white focus:outline-none"
+                        className="w-full min-w-0 appearance-none rounded-xl border border-[#2B2118]/20 bg-[#EDE4D3]/40 px-4 py-3 text-sm text-[#2B2118] transition-colors focus:border-[#7A4B2E] focus:bg-white focus:outline-none"
                       />
                     </div>
                     {errors.preferredDate && (

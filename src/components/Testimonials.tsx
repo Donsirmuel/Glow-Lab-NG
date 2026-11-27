@@ -51,7 +51,7 @@ export function Testimonials() {
             </motion.h2>
           </div>
 
-          <motion.div variants={STAGGER_ITEM} className="flex items-center gap-2 sm:hidden">
+          <motion.div variants={STAGGER_ITEM} className="flex items-center gap-2 lg:hidden">
             <motion.button
               type="button"
               whileTap={shouldReduceMotion ? undefined : { scale: 0.92 }}
@@ -73,13 +73,13 @@ export function Testimonials() {
           </motion.div>
         </motion.div>
 
-        {/* Mobile animated slider */}
+        {/* Mobile & Tablet animated slider */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={SECTION_VIEWPORT}
           transition={{ duration: 0.56, delay: 0.1, ease: EASE_EDITORIAL }}
-          className="mt-8 md:hidden"
+          className="mt-8 lg:hidden"
         >
           <AnimatePresence mode="wait">
             <motion.figure
@@ -88,7 +88,7 @@ export function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={shouldReduceMotion ? undefined : { opacity: 0, x: -16 }}
               transition={{ duration: 0.25, ease: EASE_EDITORIAL }}
-              className="flex flex-col justify-between rounded-[22px] border border-[#D8C9AF]/20 bg-[#372A1F] p-6"
+              className="flex flex-col justify-between rounded-[22px] border border-[#D8C9AF]/20 bg-[#372A1F] p-6 sm:p-8"
             >
               <div>
                 <div className="flex items-center gap-1" aria-label={`${mobileItem.stars} out of 5 stars`}>
@@ -100,7 +100,7 @@ export function Testimonials() {
                     />
                   ))}
                 </div>
-                <blockquote className="font-display mt-5 text-lg leading-relaxed font-medium tracking-wide text-[#F3EBDD]">
+                <blockquote className="font-display mt-5 text-lg leading-relaxed font-medium tracking-wide text-[#F3EBDD] sm:text-xl">
                   “{mobileItem.quote}”
                 </blockquote>
               </div>
@@ -115,7 +115,7 @@ export function Testimonials() {
         </motion.div>
 
         {/* Desktop 3-column grid */}
-        <div className="mt-10 hidden grid-cols-3 gap-5 md:grid">
+        <div className="mt-10 hidden grid-cols-3 gap-5 lg:grid">
           {TESTIMONIALS.map((item, idx) => (
             <motion.figure
               key={item.id}
@@ -128,7 +128,7 @@ export function Testimonials() {
                 ease: EASE_EDITORIAL,
               }}
               whileHover={shouldReduceMotion ? undefined : { y: -5 }}
-              className="flex flex-col justify-between rounded-[22px] border border-[#D8C9AF]/20 bg-[#372A1F] p-8 transition-colors duration-200 hover:border-[#D8C9AF]/50"
+              className="flex flex-col justify-between rounded-[22px] border border-[#D8C9AF]/20 bg-[#372A1F] p-6 transition-colors duration-200 hover:border-[#D8C9AF]/50 xl:p-8"
             >
               <div>
                 <div className="flex items-center gap-1" aria-label={`${item.stars} out of 5 stars`}>
@@ -163,7 +163,7 @@ export function Testimonials() {
           whileInView={{ opacity: 1 }}
           viewport={SECTION_VIEWPORT}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="mt-5 flex items-center justify-center gap-2 md:hidden"
+          className="mt-5 flex items-center justify-center gap-2 lg:hidden"
         >
           {TESTIMONIALS.map((item, idx) => (
             <button
